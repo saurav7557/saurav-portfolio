@@ -4,11 +4,47 @@ import { useRef } from 'react';
 import { motion, useInView, Variants } from 'framer-motion';
 import { GraduationCap, Calendar, Award } from 'lucide-react';
 
-const highlights = [
-  'Full Stack Development',
-  'Computer Vision',
-  'Distributed Systems',
-  'Blockchain Applications',
+const educationData = [
+  {
+    degree: 'Bachelor of Technology',
+    field: 'Information Technology',
+    institution: 'Rungta College of Engineering and Technology, Bhilai',
+    duration: '2022 – 2026',
+    scoreLabel: 'CGPA',
+    score: '7.65 / 10',
+    highlights: [
+      'Full Stack Development',
+      'Computer Vision',
+      'Distributed Systems',
+      'Blockchain Applications',
+    ],
+  },
+  {
+    degree: 'Class XII',
+    field: 'Intermediate',
+    institution: 'Inter Mathurasini Mahavidyalaya, Rajauli, Nawada, Bihar',
+    duration: '2019 – 2021',
+    scoreLabel: 'Percentage',
+    score: '70%',
+    highlights: [
+      'Science Stream',
+      'Mathematics',
+      'Analytical Thinking',
+    ],
+  },
+  {
+    degree: 'Class X',
+    field: 'Secondary Education',
+    institution: 'DAV Public School, Daudnagar, Aurangabad, Bihar',
+    duration: '2019',
+    scoreLabel: 'Percentage',
+    score: '84.6%',
+    highlights: [
+      'Mathematics',
+      'Science',
+      'Academic Excellence',
+    ],
+  },
 ];
 
 const containerVariants: Variants = {
@@ -84,37 +120,77 @@ export default function Education() {
         </motion.div>
 
         {/* Education Card */}
-        <motion.div
-          variants={itemVariants}
-          whileHover={{
-            scale: 1.02,
-            borderColor: 'rgba(59, 130, 246, 0.3)',
-            boxShadow: '0 0 40px rgba(59, 130, 246, 0.1)',
-          }}
-          transition={{ duration: 0.3, ease: 'easeOut' }}
-          className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition-colors duration-300 hover:bg-white/[0.08] sm:p-10"
-        >
-          {/* Hover gradient overlay */}
-          <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+        <div className="space-y-8">
+  {educationData.map((edu, index) => (
+    <motion.div
+      key={index}
+      variants={itemVariants}
+      whileHover={{
+        scale: 1.02,
+        borderColor: 'rgba(59,130,246,0.3)',
+        boxShadow: '0 0 40px rgba(59,130,246,0.1)',
+      }}
+      transition={{ duration: 0.3 }}
+      className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition-colors duration-300 hover:bg-white/[0.08] sm:p-10"
+    >
+      <div className="relative z-10">
+        <div className="mb-6 flex items-start gap-5">
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-gradient-to-br from-blue-500/20 to-blue-600/10">
+            <GraduationCap className="h-7 w-7 text-blue-400" />
+          </div>
 
-          {/* Decorative corner accent */}
-          <div className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-blue-500/10 blur-2xl transition-all duration-500 group-hover:bg-blue-500/15" />
+          <div>
+            <h3 className="text-2xl font-bold text-white">
+              {edu.degree}
+            </h3>
 
-          <div className="relative z-10">
-            {/* Icon & Degree */}
-            <motion.div variants={itemVariants} className="mb-6 flex items-start gap-5">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-gradient-to-br from-blue-500/20 to-blue-600/10">
-                <GraduationCap className="h-7 w-7 text-blue-400" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-white">
-                  Bachelor of Technology
-                </h3>
-                <p className="mt-1 text-lg text-blue-400/80">
-                  Information Technology
-                </p>
-              </div>
-            </motion.div>
+            <p className="mt-1 text-lg text-blue-400/80">
+              {edu.field}
+            </p>
+          </div>
+        </div>
+
+        <p className="mb-6 text-lg text-gray-300">
+          {edu.institution}
+        </p>
+
+        <div className="mb-8 flex flex-wrap items-center gap-6">
+          <div className="flex items-center gap-2 text-gray-400">
+            <Calendar className="h-4 w-4 text-blue-400/60" />
+            <span className="text-sm">{edu.duration}</span>
+          </div>
+
+          <div className="flex items-center gap-2 text-gray-400">
+            <Award className="h-4 w-4 text-blue-400/60" />
+            <span className="text-sm">
+              {edu.scoreLabel}:{' '}
+              <span className="font-semibold text-white">
+                {edu.score}
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <div className="mb-8 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+        <p className="mb-4 text-sm font-medium uppercase tracking-wider text-gray-500">
+          Key Focus Areas
+        </p>
+
+        <div className="flex flex-wrap gap-3">
+          {edu.highlights.map((item) => (
+            <span
+              key={item}
+              className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-300 hover:bg-blue-500/10 hover:text-blue-300"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  ))}
+</div>
 
             {/* College Name */}
             <motion.p
