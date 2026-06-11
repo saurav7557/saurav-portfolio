@@ -57,7 +57,7 @@ const projects: Project[] = [
       'Developed Solidity smart contracts',
       'Enabled QR-based instant certificate verification',
     ],
-    githubUrl: '#',
+    githubUrl: 'https://github.com/saurav7557/Hackindia-Spark-4-2025-Tech-No-Logic',
   },
   {
     title: 'AI-Based Intellectual Property Protection System',
@@ -84,6 +84,7 @@ const projects: Project[] = [
       'Created modular backend architecture',
       'Implemented real-time notifications',
     ],
+     githubUrl: 'https://github.com/saurav7557/Gdg-Solution-Challenge',
     achievement: { label: 'Winner — RCET Project Competition 2025' },
   },
   {
@@ -108,6 +109,7 @@ const projects: Project[] = [
       'Camera calibration system',
       'Interactive visualization interface',
     ],
+    githubUrl:'https://github.com/saurav7557/AR-FloorPlan-Detection'
   },
 ];
 
