@@ -65,13 +65,13 @@ export default function Contact() {
     {
       icon: <MapPin className="w-5 h-5 text-blue-400" />,
       label: 'Location',
-      value: 'Bhilai, Chhattisgarh, India',
+      value: 'Rajauli, Nawada, India',
     },
     {
       icon: <Linkedin className="w-5 h-5 text-blue-400" />,
       label: 'LinkedIn',
       value: 'linkedin.com/in/saurav-kumar',
-      href: 'www.linkedin.com/in/saurav-kumar-5b03a9391',
+      href: 'https://www.linkedin.com/in/saurav-kumar-5b03a9391/',
       external: true,
     },
     {
