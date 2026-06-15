@@ -71,7 +71,7 @@ export default function Contact() {
       icon: <Linkedin className="w-5 h-5 text-blue-400" />,
       label: 'LinkedIn',
       value: 'linkedin.com/in/saurav-kumar',
-      href: 'https://linkedin.com/in/saurav-kumar',
+      href: 'www.linkedin.com/in/saurav-kumar-5b03a9391',
       external: true,
     },
     {
